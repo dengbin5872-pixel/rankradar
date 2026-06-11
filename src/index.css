@@ -1,0 +1,63 @@
+/* ── Global Reset & Tokens ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:          #F7F8FA;
+  --surface:     #FFFFFF;
+  --sidebar:     #1C2333;
+  --sidebar-hover:  #263044;
+  --sidebar-active: #2E3A50;
+  --orange:      #F97316;
+  --orange-dark: #EA6C0A;
+  --orange-50:   #FFF7ED;
+  --orange-100:  #FFEDD5;
+  --green:       #10B981;
+  --green-50:    #ECFDF5;
+  --green-100:   #D1FAE5;
+  --red:         #EF4444;
+  --red-50:      #FEF2F2;
+  --red-100:     #FEE2E2;
+  --yellow:      #F59E0B;
+  --yellow-50:   #FFFBEB;
+  --yellow-100:  #FEF3C7;
+  --blue:        #3B82F6;
+  --blue-50:     #EFF6FF;
+  --blue-100:    #DBEAFE;
+  --purple:      #8B5CF6;
+  --purple-50:   #F5F3FF;
+  --border:      #E5E7EB;
+  --border-sm:   #F3F4F6;
+  --text-900:    #111827;
+  --text-700:    #374151;
+  --text-500:    #6B7280;
+  --text-400:    #9CA3AF;
+  --text-300:    #D1D5DB;
+  --mono:        'JetBrains Mono', monospace;
+  --sans:        'Inter', sans-serif;
+  --sidebar-w:   224px;
+  --topbar-h:    52px;
+  --radius:      8px;
+  --radius-sm:   6px;
+  --shadow-sm:   0 1px 2px rgba(0,0,0,.05);
+  --shadow:      0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md:   0 4px 6px rgba(0,0,0,.06), 0 2px 4px rgba(0,0,0,.04);
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text-900);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+button { font-family: var(--sans); cursor: pointer; }
+select { font-family: var(--sans); }
