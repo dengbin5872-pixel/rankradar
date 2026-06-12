@@ -4,6 +4,7 @@ import { LangProvider } from './context/LangContext';
 import Sidebar from './components/Sidebar';
 import Topbar from './components/Topbar';
 import DiagnosticsPage from './pages/DiagnosticsPage';
+import SetupPage from './pages/SetupPage';
 import './App.css';
 
 function AppLayout() {
@@ -12,6 +13,7 @@ function AppLayout() {
   const renderPage = () => {
     switch (activePage) {
       case 'diagnostics': return <DiagnosticsPage />;
+      case 'setup': return <SetupPage />;
       default: return (
         <div style={{ padding: 40, color: 'var(--text-400)', fontSize: 14 }}>
           {activePage} — coming soon
