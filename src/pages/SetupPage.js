@@ -90,7 +90,6 @@ export default function SetupPage() {
     if (!selfAsin) { setSelfAsinError('请输入自营 ASIN'); return; }
     if (!validateAsin(selfAsin)) { setSelfAsinError('ASIN 格式不正确'); return; }
     if (keywords.length === 0) { setKwError('请至少添加一个关键词'); return; }
-    setSelfAsinSaved(selfAsin);
     setSaved(true);
     // In production: save to Supabase here
   };
