@@ -1,0 +1,162 @@
+/* AuthPage.css */
+.auth-bg {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+}
+
+/* Logo */
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.auth-logo-mark {
+  width: 38px; height: 38px;
+  background: var(--orange);
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.auth-logo-name {
+  font-size: 16px; font-weight: 700; color: var(--text-900);
+}
+.auth-logo-sub {
+  font-size: 10px; color: var(--text-400);
+  letter-spacing: .3px; margin-top: 1px;
+}
+
+/* Tabs */
+.auth-tabs {
+  display: flex;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 3px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+}
+.auth-tab {
+  flex: 1; padding: 7px;
+  border: none; background: transparent;
+  border-radius: 6px;
+  font-size: 13.5px; font-weight: 500;
+  color: var(--text-500);
+  cursor: pointer; transition: all .15s;
+  font-family: var(--sans);
+}
+.auth-tab.active {
+  background: var(--surface);
+  color: var(--text-900);
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+/* Title */
+.auth-title {
+  font-size: 20px; font-weight: 700;
+  color: var(--text-900); letter-spacing: -.3px;
+  margin-bottom: 5px;
+}
+.auth-sub {
+  font-size: 13px; color: var(--text-500);
+  margin-bottom: 24px; line-height: 1.5;
+}
+
+/* Success */
+.auth-success {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px; color: var(--green);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Form */
+.auth-form { display: flex; flex-direction: column; gap: 14px; }
+.auth-field { display: flex; flex-direction: column; gap: 5px; }
+.auth-label {
+  font-size: 13px; font-weight: 500;
+  color: var(--text-700);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.auth-forgot {
+  font-size: 12px; color: var(--orange);
+  cursor: pointer; font-weight: 400;
+}
+.auth-forgot:hover { text-decoration: underline; }
+
+.auth-input {
+  padding: 9px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px; font-family: var(--sans);
+  color: var(--text-900); background: var(--surface);
+  outline: none; transition: border-color .15s;
+}
+.auth-input:focus { border-color: var(--orange); }
+.auth-input-error { border-color: var(--red) !important; }
+.auth-input::placeholder { color: var(--text-300); }
+
+/* Error */
+.auth-error {
+  background: var(--red-50);
+  border: 1px solid var(--red-100);
+  border-radius: 7px;
+  padding: 9px 13px;
+  font-size: 13px; color: var(--red);
+  line-height: 1.5;
+}
+
+/* Submit button */
+.auth-btn {
+  padding: 11px;
+  background: var(--orange);
+  color: white;
+  border: none; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: all .15s;
+  font-family: var(--sans);
+  margin-top: 4px;
+}
+.auth-btn:hover:not(:disabled) { background: var(--orange-dark); }
+.auth-btn:disabled { opacity: .65; cursor: not-allowed; }
+.auth-btn-loading { background: var(--orange-dark); }
+
+/* Switch mode */
+.auth-switch {
+  text-align: center;
+  font-size: 13px; color: var(--text-500);
+}
+.auth-switch span {
+  color: var(--orange); font-weight: 500;
+  cursor: pointer;
+}
+.auth-switch span:hover { text-decoration: underline; }
+
+/* Features preview */
+.auth-features {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-sm);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.auth-feat-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 12.5px; color: var(--text-500); line-height: 1.5;
+}
+.auth-feat-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
