@@ -1,13 +1,16 @@
 // src/pages/SetupPage.js
 import { useState } from 'react';
+import { useLang } from '../context/LangContext';
 import './SetupPage.css';
 
 const MAX_KEYWORDS = 20; // Starter plan limit
 
 export default function SetupPage() {
+  const { t } = useLang();
 
   // Self ASIN
   const [selfAsin, setSelfAsin] = useState('');
+  const [selfAsinSaved, setSelfAsinSaved] = useState('');
   const [selfAsinError, setSelfAsinError] = useState('');
 
   // Competitor ASINs
