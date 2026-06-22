@@ -1,6 +1,8 @@
-# 访问根路径 / 时，强制显示静态着陆页
-# 末尾的 ! 是关键：强制此规则优先于应用的 index.html 文件
+# 根路径 / 显示静态着陆页（! 强制优先于应用的 index.html）
 /                /landing.html        200!
 
-# 其余所有路径交给 React 应用（SPA 兜底）。这一行不能加 !，否则会把法律页也拦截掉
+# /pricing 显示公开的静态价格页（! 强制优先于 SPA 兜底）
+/pricing         /pricing.html        200!
+
+# 其余所有路径交给 React 应用（SPA 兜底）。这一行不能加 !
 /*               /index.html          200
