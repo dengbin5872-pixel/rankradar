@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RankRadar — Amazon 关键词排名追踪与竞品分析</title>
+  <meta name="description" content="RankRadar 帮助亚马逊卖家实时追踪关键词排名、分析竞品、智能诊断 Listing，做出更聪明的运营决策。" />
+  <style>
+    :root { color-scheme: light; --o:#f97316; --o-dark:#ea580c; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:#fff; color:#0f172a;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+      line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    .container { max-width:1080px; margin:0 auto; padding:0 22px; }
+
+    /* nav */
+    nav { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9);
+      backdrop-filter:blur(8px); border-bottom:1px solid #f1f5f9; }
+    .nav-in { display:flex; align-items:center; justify-content:space-between; height:64px; }
+    .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:18px; }
+    .logo-mark { width:34px; height:34px; border-radius:9px; background:var(--o);
+      display:flex; align-items:center; justify-content:center; font-size:18px; }
+    .logo-sub { font-size:11px; font-weight:600; color:#94a3b8; letter-spacing:.5px; }
+    .nav-links { display:flex; align-items:center; gap:26px; font-size:15px; color:#475569; }
+    .nav-links a:hover { color:#0f172a; }
+    .btn { display:inline-block; border-radius:10px; font-weight:600; cursor:pointer; border:0; }
+    .btn-primary { background:var(--o); color:#fff; padding:10px 20px; font-size:15px; }
+    .btn-primary:hover { background:var(--o-dark); }
+    .btn-ghost { color:#475569; padding:10px 8px; font-size:15px; }
+    @media(max-width:640px){ .nav-links a:not(.btn){ display:none; } }
+
+    /* hero */
+    .hero { padding:84px 0 72px; text-align:center;
+      background:radial-gradient(1200px 400px at 50% -100px, #fff7ed 0%, #fff 70%); }
+    .badge { display:inline-block; font-size:13px; font-weight:600; color:var(--o-dark);
+      background:#fff7ed; border:1px solid #fed7aa; padding:6px 14px; border-radius:999px; margin-bottom:22px; }
+    h1 { font-size:46px; line-height:1.15; font-weight:800; margin:0 0 18px; letter-spacing:-1px; }
+    h1 .hl { color:var(--o); }
+    .lead { font-size:19px; color:#475569; max-width:620px; margin:0 auto 32px; }
+    .hero-cta { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .btn-lg { padding:14px 30px; font-size:16px; border-radius:12px; }
+    .btn-outline { background:#fff; border:1px solid #e2e8f0; color:#0f172a; }
+    .btn-outline:hover { border-color:#cbd5e1; }
+    .hero-note { margin-top:16px; font-size:13px; color:#94a3b8; }
+    @media(max-width:640px){ h1{ font-size:33px; } .lead{ font-size:17px; } }
+
+    /* features */
+    section.block { padding:64px 0; }
+    .sec-head { text-align:center; max-width:600px; margin:0 auto 44px; }
+    .sec-head h2 { font-size:30px; font-weight:800; margin:0 0 10px; }
+    .sec-head p { color:#64748b; font-size:16px; margin:0; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+    @media(max-width:720px){ .grid{ grid-template-columns:1fr; } }
+    .card { border:1px solid #f1f5f9; background:#fff; border-radius:16px; padding:28px;
+      box-shadow:0 1px 3px rgba(15,23,42,.04); }
+    .card .ic { width:46px; height:46px; border-radius:11px; background:#fff7ed; color:var(--o);
+      display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:16px; }
+    .card h3 { font-size:18px; font-weight:700; margin:0 0 8px; }
+    .card p { color:#64748b; font-size:15px; margin:0; }
+
+    /* steps */
+    .alt { background:#f8fafc; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    @media(max-width:720px){ .steps{ grid-template-columns:1fr; } }
+    .step .num { width:34px; height:34px; border-radius:50%; background:var(--o); color:#fff;
+      font-weight:700; display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+    .step h3 { font-size:17px; margin:0 0 6px; }
+    .step p { color:#64748b; font-size:15px; margin:0; }
+
+    /* cta band */
+    .cta-band { text-align:center; padding:72px 22px;
+      background:linear-gradient(135deg,#f97316,#fb923c); color:#fff; border-radius:22px; margin:24px 0; }
+    .cta-band h2 { font-size:30px; font-weight:800; margin:0 0 12px; }
+    .cta-band p { font-size:17px; opacity:.95; margin:0 0 26px; }
+    .btn-white { background:#fff; color:var(--o-dark); padding:14px 32px; font-size:16px; border-radius:12px; font-weight:700; }
+
+    /* footer */
+    footer { border-top:1px solid #f1f5f9; padding:48px 0 40px; }
+    .foot-in { display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; }
+    .foot-brand { max-width:300px; }
+    .foot-brand p { color:#64748b; font-size:14px; margin:10px 0 0; }
+    .foot-links { display:flex; gap:48px; flex-wrap:wrap; }
+    .foot-col h4 { font-size:13px; text-transform:uppercase; letter-spacing:.6px; color:#94a3b8; margin:0 0 12px; }
+    .foot-col a { display:block; color:#475569; font-size:14px; margin-bottom:9px; }
+    .foot-col a:hover { color:var(--o); }
+    .copyright { margin-top:36px; padding-top:24px; border-top:1px solid #f1f5f9;
+      color:#94a3b8; font-size:13px; text-align:center; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container nav-in">
+      <a class="logo" href="/">
+        <span class="logo-mark">📡</span>
+        <span>RankRadar <span class="logo-sub">Amazon Intelligence</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">功能</a>
+        <a href="/pricing">价格</a>
+        <a href="/login" class="btn btn-ghost">登录</a>
+        <a href="/login" class="btn btn-primary">免费开始</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <span class="badge">专为亚马逊卖家打造</span>
+      <h1>实时追踪你的<br><span class="hl">Amazon 关键词排名</span></h1>
+      <p class="lead">RankRadar 帮你监控关键词排名、分析竞品动态、智能诊断 Listing 问题，把运营决策建立在数据上，而不是靠猜。</p>
+      <div class="hero-cta">
+        <a href="/login" class="btn btn-primary btn-lg">免费开始使用</a>
+        <a href="/pricing" class="btn btn-outline btn-lg">查看价格</a>
+      </div>
+      <p class="hero-note">免费套餐无需信用卡 · 随时升级</p>
+    </div>
+  </header>
+
+  <section class="block" id="features">
+    <div class="container">
+      <div class="sec-head">
+        <h2>你需要的，都在一个地方</h2>
+        <p>从关键词到竞品，从诊断到优化，RankRadar 覆盖亚马逊运营的核心环节。</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="ic">📈</div>
+          <h3>关键词排名追踪</h3>
+          <p>持续监控你的产品在核心关键词下的自然排名变化，第一时间发现波动和机会。</p>
+        </div>
+        <div class="card">
+          <div class="ic">🔍</div>
+          <h3>竞品分析</h3>
+          <p>追踪竞品的关键词布局与排名表现，看清对手在哪些词上抢量，及时调整策略。</p>
+        </div>
+        <div class="card">
+          <div class="ic">🩺</div>
+          <h3>智能诊断</h3>
+          <p>自动检测 Listing 的潜在问题，给出可执行的优化建议，帮你提升转化与曝光。</p>
+        </div>
+        <div class="card">
+          <div class="ic">⚙️</div>
+          <h3>品类与配额设置</h3>
+          <p>按品类灵活配置监控的 ASIN、竞品和关键词数量，套餐随业务规模一起成长。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="container">
+      <div class="sec-head">
+        <h2>三步开始</h2>
+        <p>几分钟即可上手，不需要复杂配置。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>注册账号</h3>
+          <p>用邮箱免费注册，立刻进入工作台。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>添加 ASIN 与关键词</h3>
+          <p>填入你要监控的产品和核心关键词，设置竞品。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>追踪与优化</h3>
+          <p>查看排名趋势与诊断报告，持续优化你的 Listing。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="cta-band">
+      <h2>准备好提升你的 Amazon 排名了吗？</h2>
+      <p>从免费套餐开始，随时按需升级。</p>
+      <a href="/login" class="btn btn-white">免费开始使用</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="foot-in">
+        <div class="foot-brand">
+          <a class="logo" href="/">
+            <span class="logo-mark">📡</span>
+            <span>RankRadar</span>
+          </a>
+          <p>专为亚马逊卖家打造的关键词排名追踪与竞品分析工具。</p>
+        </div>
+        <div class="foot-links">
+          <div class="foot-col">
+            <h4>产品</h4>
+            <a href="#features">功能</a>
+            <a href="/pricing">价格</a>
+            <a href="/login">登录</a>
+          </div>
+          <div class="foot-col">
+            <h4>法律</h4>
+            <a href="/terms.html">服务条款</a>
+            <a href="/privacy.html">隐私政策</a>
+            <a href="/refund.html">退款政策</a>
+          </div>
+          <div class="foot-col">
+            <h4>联系</h4>
+            <a href="mailto:dengbin5872@gmail.com">dengbin5872@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">© 2026 RankRadar. All rights reserved.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

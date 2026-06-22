@@ -1,1 +1,5 @@
-/* /index.html 200 
+# 访问根路径 / 时，显示静态着陆页（这一行必须在最上面）
+/                /landing.html        200
+
+# 其余所有路径交给 React 应用（SPA 单页路由的兜底，保证刷新 /login、/pricing 不 404）
+/*               /index.html          200
