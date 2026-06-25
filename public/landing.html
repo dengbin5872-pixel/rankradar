@@ -101,19 +101,35 @@
     .case-b2 .lesson{background:rgba(249,115,22,.15);border-left:3px solid var(--o);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px;color:#fed7aa;margin-top:10px;font-weight:600;}
     .case-b2 .src{font-size:12px;color:#475569;margin-top:12px;}
 
-    /* 课程 */
-    .curriculum{background:#fff;border:1px solid #eef2f7;border-radius:18px;overflow:hidden;}
-    .curr-head{background:linear-gradient(135deg,var(--o),var(--o-dark));padding:28px 30px;color:#fff;}
-    .curr-head h3{font-size:22px;font-weight:800;margin-bottom:6px;}
-    .curr-head p{opacity:.9;font-size:14px;}
-    .curr-body{padding:24px 30px;}
-    .curr-section{margin-bottom:22px;}
-    .curr-section h4{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--o);margin-bottom:10px;}
-    .curr-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;}
-    @media(max-width:640px){.curr-list{grid-template-columns:1fr;}}
-    .curr-list li{font-size:14px;color:#334155;padding:5px 0;border-bottom:1px solid #f8fafc;display:flex;gap:8px;align-items:baseline;}
-    .curr-list li::before{content:"›";color:var(--o);font-weight:800;flex-shrink:0;}
-    .curr-note{background:#f8fafc;border-radius:10px;padding:14px 18px;font-size:13px;color:var(--muted);margin-top:18px;}
+    /* 课程三要点卡片 */
+    .method-cards{display:flex;flex-direction:column;gap:20px;}
+    .mc{position:relative;border-radius:18px;border:1px solid #eef2f7;background:#fff;padding:30px 30px 26px;overflow:hidden;}
+    .mc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--o),#fb923c);}
+    .mc-num{position:absolute;top:20px;right:22px;font-size:42px;font-weight:800;color:#f1f5f9;line-height:1;user-select:none;}
+    .mc-content{position:relative;}
+    .mc-head{margin-bottom:20px;}
+    .mc-icon{font-size:26px;}
+    .mc-head h3{font-size:21px;font-weight:800;margin:6px 0 6px;display:flex;align-items:center;gap:10px;}
+    .mc-sub{color:var(--muted);font-size:15px;line-height:1.6;}
+    .mc-compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+    @media(max-width:720px){.mc-compare{grid-template-columns:1fr;}}
+    .mc-bad,.mc-good{border-radius:12px;padding:16px 18px;}
+    .mc-bad{background:#fef2f2;border:1px solid #fecaca;}
+    .mc-good{background:#f0fdf4;border:1px solid #bbf7d0;}
+    .mc-label{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;display:inline-block;margin-bottom:12px;}
+    .mc-label-bad{background:#fee2e2;color:#b91c1c;}
+    .mc-label-good{background:#dcfce7;color:#15803d;}
+    .mc-bad ul,.mc-good ul{list-style:none;padding:0;}
+    .mc-bad li,.mc-good li{font-size:14px;color:#334155;padding:5px 0;line-height:1.6;border-bottom:1px solid rgba(0,0,0,.05);}
+    .mc-bad li:last-child,.mc-good li:last-child{border-bottom:0;}
+    .mc-lessons{display:flex;flex-wrap:wrap;gap:8px;}
+    .mc-lesson-item{background:#f8fafc;border:1px solid #eef2f7;border-radius:8px;padding:6px 12px;font-size:13px;color:#475569;}
+
+    /* 其余课程小标签 */
+    .also-includes{margin-top:32px;background:#f8fafc;border-radius:16px;padding:22px 26px;display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;}
+    .ai-label{font-size:13px;font-weight:700;color:var(--o);white-space:nowrap;padding-top:4px;}
+    .ai-tags{display:flex;flex-wrap:wrap;gap:8px;}
+    .ai-tags span{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:5px 12px;font-size:13px;color:#475569;}
 
     /* 工具 */
     .tool{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
@@ -308,71 +324,144 @@
 <section class="block" id="courses">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kicker">年度会员课程</div>
-      <h2>选品课：从找品到上架全流程</h2>
-      <p>老邓亲授，完整覆盖蓝海选品的每一个关键环节，持续更新。</p>
+      <div class="kicker">年度会员 · 选品课</div>
+      <h2>蓝海选品体系，3 个维度</h2>
+      <p>信息渠道 → 筛选标准 → 产品落地。一个流程走下来，就是老邓理解的选品。</p>
     </div>
-    <div class="curriculum">
-      <div class="curr-head">
-        <h3>🎯 产品开发与选品课程目录</h3>
-        <p>55+ 节课 · 含工具清单、实操演示、关键词四步法</p>
+
+    <!-- 三大卡片 -->
+    <div class="method-cards">
+
+      <!-- 卡片一：信息渠道 -->
+      <div class="mc">
+        <div class="mc-num">01</div>
+        <div class="mc-content">
+          <div class="mc-head">
+            <span class="mc-icon">📡</span>
+            <h3>信息渠道</h3>
+            <p class="mc-sub">信息渠道的不同，造就了"信息差"——信息差，带来高利润、低竞争</p>
+          </div>
+          <div class="mc-compare">
+            <div class="mc-bad">
+              <div class="mc-label mc-label-bad">❌ 大多数人这样做</div>
+              <ul>
+                <li>盯着 Best Seller 榜单找品</li>
+                <li>用 JungleScout 看别人已经跑量的品</li>
+                <li>和成千上万卖家看同一个数据源</li>
+                <li>结果：看到的都是红海，竞争激烈、利润被压</li>
+              </ul>
+            </div>
+            <div class="mc-good">
+              <div class="mc-label mc-label-good">✓ 老邓怎么做</div>
+              <ul>
+                <li>用老邓推荐的 2 个冷门信息渠道发现机会</li>
+                <li>不用 JungleScout 和 BSR，避开大众视野</li>
+                <li>从信息渠道挑选产品，记录进选品信息库</li>
+                <li>结果：爬宠躲避盒子，成本 3 元卖 12 美金，2019–2025 年只有 2 个国内卖家在做</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mc-lessons">
+            <div class="mc-lesson-item">📖 我用哪个信息渠道找到爬宠躲避这个蓝海产品</div>
+            <div class="mc-lesson-item">📖 推荐 2 个好用的产品信息渠道</div>
+            <div class="mc-lesson-item">📖 如何从信息渠道挑选产品并记录到信息库</div>
+          </div>
+        </div>
       </div>
-      <div class="curr-body">
-        <div class="curr-section">
-          <h4>📌 选品基础与筛选标准</h4>
-          <ul class="curr-list">
-            <li>学习目标 · 老邓怎么找到爬宠躲避</li>
-            <li>产品开发常用工具</li>
-            <li>筛选标准：账号安全性</li>
-            <li>筛选标准：降低不必要成本</li>
-            <li>筛选标准：资金门槛不吃力</li>
-            <li>筛选标准：销售出单可持续</li>
-            <li>筛选标准：初步评估差异化</li>
-            <li>筛选标准：深入评估竞争度</li>
-          </ul>
+
+      <!-- 卡片二：筛选标准 -->
+      <div class="mc">
+        <div class="mc-num">02</div>
+        <div class="mc-content">
+          <div class="mc-head">
+            <span class="mc-icon">🎯</span>
+            <h3>筛选标准</h3>
+            <p class="mc-sub">在信息渠道，我们不是看到哪个产品就做哪个——时间、预算是有限的，必须筛出最优的品</p>
+          </div>
+          <div class="mc-compare">
+            <div class="mc-bad">
+              <div class="mc-label mc-label-bad">❌ 大多数人这样做</div>
+              <ul>
+                <li>凭感觉或"看起来好卖"就拍板</li>
+                <li>不做毛利率计算，上架后才发现不赚钱</li>
+                <li>忽略专利风险，被投诉后下架</li>
+                <li>只看销量不看竞争度，一上就价格战</li>
+              </ul>
+            </div>
+            <div class="mc-good">
+              <div class="mc-label mc-label-good">✓ 老邓的筛选体系</div>
+              <ul>
+                <li><b>初筛口诀"新简小十"</b>：新（没听过）/ 简（构造简单）/ 小（体积小）/ 十（采购成本约十元内）</li>
+                <li><b>一票否决</b>：毛利率不够、资金门槛太高、带电带液、有专利风险——直接 pass</li>
+                <li><b>竞争度评估</b>：核心出单词首页卖家数量 + 竞品详情页分析</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mc-lessons">
+            <div class="mc-lesson-item">📖 确保账号安全性，附专利查询步骤</div>
+            <div class="mc-lesson-item">📖 如何计算产品资金门槛</div>
+            <div class="mc-lesson-item">📖 用"一票否决"快速过滤产品</div>
+            <div class="mc-lesson-item">📖 如何看产品的竞争度</div>
+            <div class="mc-lesson-item">📖 新品如何做出差异化</div>
+          </div>
         </div>
-        <div class="curr-section">
-          <h4>🔍 选品流程与关键词四步法</h4>
-          <ul class="curr-list">
-            <li>为什么不用 Jungle Scout？</li>
-            <li>什么是竞品 · 信息库记录</li>
-            <li>毛利率计算 · 一票否决标准</li>
-            <li>关键词工具清单（月费约 ¥100）</li>
-            <li>验证关键词列表的全面性</li>
-            <li>文本收集 · 文本分类</li>
-            <li>导出关键词数据（省时省力）</li>
-            <li>找出 20–30 个核心出单词</li>
-          </ul>
+      </div>
+
+      <!-- 卡片三：产品落地 -->
+      <div class="mc">
+        <div class="mc-num">03</div>
+        <div class="mc-content">
+          <div class="mc-head">
+            <span class="mc-icon">🏭</span>
+            <h3>产品落地</h3>
+            <p class="mc-sub">产品落地，就是从"你想做这个产品"到"你可以把这个产品拿去卖"——中间那段过程</p>
+          </div>
+          <div class="mc-compare">
+            <div class="mc-bad">
+              <div class="mc-label mc-label-bad">❌ 大多数人这样做</div>
+              <ul>
+                <li>去 1688 等公域货源平台直接找现货</li>
+                <li>和几十个卖家卖完全一样的产品</li>
+                <li>开发难度为 0，护城河也为 0</li>
+                <li>结果：价格战，利润越卖越薄</li>
+              </ul>
+            </div>
+            <div class="mc-good">
+              <div class="mc-label mc-label-good">✓ 老邓怎么做</div>
+              <ul>
+                <li>偏好自己独有的货源，不做公域平台能直接拿到的货</li>
+                <li>自己设计产品、做差异化，建护城河</li>
+                <li>平衡开发难度：不能太高，但要有门槛</li>
+                <li>结果：爬宠躲避系列做了 6 年，竞争对手只有 2 个</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mc-lessons">
+            <div class="mc-lesson-item">📖 联系供应商的注意事项</div>
+            <div class="mc-lesson-item">📖 找不到货源的解决办法</div>
+            <div class="mc-lesson-item">📖 产品外包装注意事项</div>
+            <div class="mc-lesson-item">📖 第一批货如何凑够 21 公斤</div>
+          </div>
         </div>
-        <div class="curr-section">
-          <h4>📦 备货 · Listing 文案 · 产品图片</h4>
-          <ul class="curr-list">
-            <li>联系供应商注意事项</li>
-            <li>找不到货源的解决办法</li>
-            <li>第一批货如何凑够 21 公斤</li>
-            <li>文案模板：大词 / 标题 / 五点</li>
-            <li>文案模板：长描述 / Search Term</li>
-            <li>卖点提炼：让老外看了就想买</li>
-            <li>图片类型及作用 · 主图点击率</li>
-            <li>3D 建模渲染 · 实拍图片上下</li>
-          </ul>
-        </div>
-        <div class="curr-section">
-          <h4>🚀 发货 · 测评 · 广告 · 日常维护</h4>
-          <ul class="curr-list">
-            <li>FBA 发货全流程</li>
-            <li>测评数量 · 安全性 · 三类资源</li>
-            <li>站内广告创建 · 报告分析</li>
-            <li>广告结构 · 调整优化</li>
-            <li>销售表制作 · FBA 补货计算</li>
-            <li>月利润统计 · 净利润汇总</li>
-            <li>每天 / 每周 / 每月工作安排</li>
-            <li>客户管理表 · 回头客维护</li>
-          </ul>
-        </div>
-        <div class="curr-note">📌 以上为选品课完整目录。年度会员加入即可解锁全部内容，课程持续更新，会员期内新增内容免费看。</div>
+      </div>
+
+    </div><!-- /method-cards -->
+
+    <!-- 其余课程小标签 -->
+    <div class="also-includes">
+      <div class="ai-label">年度会员还包含：</div>
+      <div class="ai-tags">
+        <span>关键词四步法（找出 20–30 个核心出单词）</span>
+        <span>Listing 文案模板（不会英语也能写）</span>
+        <span>产品图片布局 · 主图点击率</span>
+        <span>3D 建模渲染 · 实拍技巧</span>
+        <span>FBA 发货全流程</span>
+        <span>站内广告创建 · 报告分析</span>
+        <span>月利润统计 · 每周工作安排</span>
+        <span>团队合伙避坑（合同 · 分红 · 人性）</span>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -445,13 +534,18 @@
       <p>主推年度会员；只想用工具的，也有单独的软件套餐。</p>
     </div>
     <div class="price-wrap">
-      <!-- 年度会员 + 倒计时 -->
       <div class="price-main">
         <div class="ribbon">最推荐</div>
         <h3>年度会员</h3>
         <div class="orig">原价 $1,099 / 年</div>
         <div class="amt">$999<small> / 年</small></div>
-        <!-- 倒计时 -->
+        <ul>
+          <li>完整选品课（55+ 节，含工具清单与实操）</li>
+          <li>课程持续更新，跟着亚马逊变化进化</li>
+          <li>社群答疑，遇到问题有人带</li>
+          <li>Zeekk 关键词排名工具全功能免费用</li>
+        </ul>
+        <!-- 倒计时放在优势列表和按钮之间 -->
         <div class="countdown">
           <div class="cd-label">⏰ 限时优惠价，倒计时结束后恢复原价</div>
           <div class="cd-boxes">
@@ -461,12 +555,6 @@
             <div class="cd-box"><span class="cd-num" id="cd-s">--</span><div class="cd-unit">秒</div></div>
           </div>
         </div>
-        <ul>
-          <li>完整选品课（55+ 节，含工具清单与实操）</li>
-          <li>课程持续更新，跟着亚马逊变化进化</li>
-          <li>社群答疑，遇到问题有人带</li>
-          <li>Zeekk 关键词排名工具全功能免费用</li>
-        </ul>
         <a href="/login" class="btn btn-white">加入年度会员</a>
       </div>
       <!-- 软件订阅 -->
