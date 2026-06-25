@@ -72,8 +72,8 @@ export default function AuthPage() {
         <div className="auth-logo">
           <div className="auth-logo-mark">📡</div>
           <div>
-            <div className="auth-logo-name">RankRadar</div>
-            <div className="auth-logo-sub">Amazon Intelligence</div>
+            <div className="auth-logo-name">Zeekk</div>
+            <div className="auth-logo-sub">Powered by Zeekk</div>
           </div>
         </div>
 

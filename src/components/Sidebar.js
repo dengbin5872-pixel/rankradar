@@ -28,7 +28,7 @@ export default function Sidebar({ activePage, onNavigate, onSignOut, user }) {
         <div className="logo-row">
           <div className="logo-mark">📡</div>
           <div>
-            <div className="logo-name">RankRadar</div>
+            <div className="logo-name">Zeekk</div>
             <div className="logo-sub">{t('logo_sub')}</div>
           </div>
         </div>
