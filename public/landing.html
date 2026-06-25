@@ -45,14 +45,29 @@
     @media(max-width:780px){.nav-links{display:none;}}
 
     /* HERO */
-    .hero{padding:70px 0 60px;background:radial-gradient(1100px 420px at 50% -120px,#fff7ed 0%,#fff 72%);text-align:center;}
-    .hero .badge{display:inline-block;font-size:13px;font-weight:700;color:var(--o-dark);background:#fff7ed;border:1px solid #fed7aa;padding:6px 14px;border-radius:999px;margin-bottom:20px;}
-    .hero h1{font-size:44px;line-height:1.18;font-weight:800;letter-spacing:-1px;margin-bottom:18px;}
+    .hero{padding:48px 0 52px;background:radial-gradient(1100px 420px at 50% -120px,#fff7ed 0%,#fff 72%);}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:24px;align-items:center;}
+    .hero-center{text-align:center;}
+    .hero .badge{display:inline-block;font-size:13px;font-weight:700;color:var(--o-dark);background:#fff7ed;border:1px solid #fed7aa;padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+    .hero h1{font-size:36px;line-height:1.18;font-weight:800;letter-spacing:-1px;margin-bottom:16px;}
     .hero h1 .hl{color:var(--o);}
-    .hero .lead{font-size:18px;color:#475569;max-width:680px;margin:0 auto 30px;}
-    .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-    .hero-note{margin-top:16px;font-size:13px;color:#94a3b8;}
-    @media(max-width:640px){.hero h1{font-size:31px;}.hero .lead{font-size:16px;}.hero-cta .btn{width:100%;max-width:300px;}}
+    .hero .lead{font-size:15px;color:#475569;margin:0 auto 24px;line-height:1.7;}
+    .hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+    .hero-note{margin-top:14px;font-size:12px;color:#94a3b8;}
+    .hero-img-wrap{position:relative;}
+    .hero-img-wrap img{width:100%;border-radius:12px;display:block;box-shadow:0 12px 36px rgba(15,23,42,.14);}
+    .hero-img-label{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);
+      background:rgba(15,23,42,.75);color:#fff;font-size:11px;font-weight:600;
+      white-space:nowrap;padding:5px 12px;border-radius:999px;backdrop-filter:blur(4px);}
+    .hero-img-badge{position:absolute;top:-10px;right:-8px;background:var(--o);color:#fff;
+      font-size:11px;font-weight:800;padding:5px 11px;border-radius:999px;
+      box-shadow:0 4px 12px rgba(249,115,22,.4);}
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:20px;}
+      .hero-center{order:-1;}
+      .hero h1{font-size:28px;}
+      .hero .lead{font-size:15px;}
+    }
 
     /* STATS */
     .stats{background:var(--ink);color:#fff;padding:36px 0;}
@@ -238,14 +253,35 @@
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <span class="badge">11 年亚马逊实战 · 单品破百万美金 · 30+ 盈利案例</span>
-    <h1>跟一线卖家学选品，<br><span class="hl">少走两年弯路</span></h1>
-    <p class="lead">我是老邓，做亚马逊 11 年。2019 年靠蓝海选品创业，单是「爬宠躲避盒子」一个产品就累计卖出超 <b>100 万美金</b>。加入年度会员，跟我系统学选品——还能免费用我自己开发的 Zeekk 关键词排名工具。</p>
-    <div class="hero-cta">
-      <a href="#pricing" class="btn btn-primary">加入年度会员</a>
-      <a href="#trial" class="btn btn-outline">先免费试听一节</a>
+    <div class="hero-grid">
+
+      <!-- 左：买家使用图 -->
+      <div class="hero-img-wrap">
+        <img src="/hide-box-review.jpg" alt="买家真实使用爬宠躲避盒子 — 守宫住在里面">
+        <div class="hero-img-label">🦎 买家真实使用图</div>
+        <div class="hero-img-badge">真实买家晒图</div>
+      </div>
+
+      <!-- 中：文字 + 按钮 -->
+      <div class="hero-center">
+        <span class="badge">11 年亚马逊实战 · 单品破百万美金 · 30+ 盈利案例</span>
+        <h1>跟一线卖家学选品，<br><span class="hl">少走两年弯路</span></h1>
+        <p class="lead">我是老邓，做亚马逊 11 年。2019 年靠蓝海选品创业，单是「爬宠躲避盒子」一个产品就累计卖出超 <b>100 万美金</b>。加入年度会员，跟我系统学选品——还能免费用我自己开发的 Zeekk 关键词排名工具。</p>
+        <div class="hero-cta">
+          <a href="#pricing" class="btn btn-primary">加入年度会员</a>
+          <a href="#trial" class="btn btn-outline">先免费试听一节</a>
+        </div>
+        <p class="hero-note">年度会员含完整选品课 + 持续更新 + Zeekk 工具</p>
+      </div>
+
+      <!-- 右：亚马逊后台订单截图 -->
+      <div class="hero-img-wrap">
+        <img src="/hide-box-orders.jpg" alt="爬宠躲避盒子亚马逊后台 — 最近365天9766个订单">
+        <div class="hero-img-label">📦 亚马逊后台真实数据</div>
+        <div class="hero-img-badge">9766 单 / 年</div>
+      </div>
+
     </div>
-    <p class="hero-note">年度会员含完整选品课 + 持续更新 + Zeekk 工具</p>
   </div>
 </header>
 
